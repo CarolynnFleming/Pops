@@ -1,5 +1,5 @@
 const data = {
-    products: [
+    offering: [
         {
             _id:'1',
             name: 'Bags',
