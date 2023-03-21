@@ -44,6 +44,11 @@ footer {
   color: #abff4f;
   
 }
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
 /* common */
 /* h1{
   font-size: 1.8rem;
@@ -99,7 +104,7 @@ header a {
    );
  animation:slidebg 2s linear infinite;
  border-radius: 30px;
- font-size: 2rem;
+ font-size: 1rem;
 }
 @keyframes slidebg {
   to {
