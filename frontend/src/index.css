@@ -104,7 +104,7 @@ header a {
    );
  animation:slidebg 2s linear infinite;
  border-radius: 30px;
- font-size: 2rem;
+ font-size: 1rem;
 }
 @keyframes slidebg {
   to {

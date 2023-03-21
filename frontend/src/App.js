@@ -7,6 +7,7 @@ import popcorn from './assets/popcorn.gif';
 import MixesScreen from './screens/MixesScreen';
 import About from './screens/About';
 import ContactScreen from './screens/ContactScreen';
+import GrabnGoScreen from './screens/GrabnGoScreen';
 function App() {
   return (
     <BrowserRouter>
@@ -20,7 +21,7 @@ function App() {
             
                   
                   <div className="follow">
-                  <a className="rainbow-4" href="/about">About</a>
+                  
                   <a className="rainbow-4" href="/offeringscreen">Offerings</a>
                   
                     <a className="rainbow-4" href="/cart">Cart</a>
@@ -33,6 +34,7 @@ function App() {
     <main>
       <Routes>
       <Route path="/about/" element={<About/>}></Route>
+      <Route path="/offering/2/" element={<GrabnGoScreen/>}></Route>
       <Route path="/contactscreen/" element={<ContactScreen/>}></Route>
       <Route path="/offeringscreen/" element={<OfferingScreen/>}></Route>
       <Route path="/offering/1" element={<BagScreen/>} exact></Route>
