@@ -4,11 +4,11 @@ export default function Offering(props) {
     const { offering } = props;
   return (
     <div key={offering._id}className="card">
-    <a href={`/offering/${offering._id}`}>
+    <a href={`/${offering.name}`}>
         <img className="medium"src={offering.image} alt="popcorn bags"/>
     </a>
     <div className="card-body">
-        <a href={`/offering/${offering._id}`}>
+        <a href={`/${offering.name}`}>
             <h2>{offering.name}</h2>
         </a>
         {/* <div className="rating">

@@ -5,7 +5,8 @@ const bagdata = {
             name: 'cheese',
             image:'/public/Cheddar-popcorn .jpg',
             price: 6.25,
-            sizes: 'SM',  
+            sizes: 'SM',
+              
         },
         {
             _id:'2',

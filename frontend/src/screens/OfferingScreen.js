@@ -6,8 +6,8 @@ export default function OfferingScreen() {
   return (
     <div className="row center">
         {
-        data.offering.map((offering) =>(
-          <Offering key={offering._id} offering={offering}></Offering>
+        data.offerings.map((offering) =>(
+          <Offering key={offering.name} offering={offering}></Offering>
 
         ))
       }
