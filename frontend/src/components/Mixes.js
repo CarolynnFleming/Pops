@@ -12,7 +12,7 @@ export default function Mixes(props) {
             <h2>{mixes.name}</h2>
         </a>
         
-      <div className="detail">{mixes.sizes}<br/> {mixes.price}</div>
+      <div className="detail">{mixes.sizes}<br/> ${mixes.price}</div>
     </div>
     </div>
   )
