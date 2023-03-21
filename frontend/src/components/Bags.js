@@ -12,7 +12,7 @@ export default function Bags(props) {
             <h2>{bag.name}</h2>
         </a>
         
-      <div className="detail">{bag.sizes}<br/> {bag.price}</div>
+      <div className="detail">{bag.sizes}<br/> ${bag.price}</div>
     </div>
     </div>
   )
