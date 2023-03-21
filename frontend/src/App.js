@@ -13,6 +13,7 @@ import GrabnGoScreen from './screens/GrabnGoScreen';
 import SportstinScreen from './screens/SportstinScreen';
 import TwogScreen from './screens/TwogScreen';
 import ThreegScreen from './screens/ThreegScreen';
+import BagDetail from './detail/BagDetail';
 function App() {
   return (
     <BrowserRouter>
@@ -38,17 +39,19 @@ function App() {
     </header>
     <main>
       <Routes>
-      <Route path="/about/" element={<About/>}></Route>
-      <Route path="/offering/8/" element={<ThreegScreen/>}></Route>
-      <Route path="/offering/7/" element={<TwogScreen/>}></Route>
-      <Route path="/offering/6/" element={<SportstinScreen/>}></Route>
-      <Route path="/offering/5/" element={<OnegScreen/>}></Route>
-      <Route path="/offering/4/" element={<BucketScreen/>}></Route>
-      <Route path="/offering/2/" element={<GrabnGoScreen/>}></Route>
-      <Route path="/contactscreen/" element={<ContactScreen/>}></Route>
-      <Route path="/offeringscreen/" element={<OfferingScreen/>}></Route>
-      <Route path="/offering/1" element={<BagScreen/>} exact></Route>
-      <Route path="/offering/3" element={<MixesScreen/>} exact></Route>
+      <Route path="/about" element={<About/>}></Route>
+      <Route path="/3gallon tin" element={<ThreegScreen/>}></Route>
+      <Route path="/2 gallon tin" element={<TwogScreen/>}></Route>
+      <Route path="/1 gallon sports tin" element={<SportstinScreen/>}></Route>
+      <Route path="/1 gallon" element={<OnegScreen/>}></Route>
+      <Route path="/bucket" element={<BucketScreen/>}></Route>
+      <Route path="/Grab & Go" element={<GrabnGoScreen/>}></Route>
+      <Route path="/contactscreen" element={<ContactScreen/>}></Route>
+      <Route path="/offeringscreen" element={<OfferingScreen/>}></Route>
+      <Route path="/offeringscreen" element={<OfferingScreen/>}></Route>
+      <Route path="/bags/:id" element={<BagDetail/>}></Route>
+      <Route path="/bags" element={<BagScreen/>}></Route>
+      <Route path="/mixes bags" element={<MixesScreen/>}></Route>
       <Route path="/" element={<HomeScreen/>} exact></Route>
       </Routes>
       
