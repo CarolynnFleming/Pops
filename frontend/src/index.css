@@ -44,6 +44,11 @@ footer {
   color: #abff4f;
   
 }
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
 /* common */
 /* h1{
   font-size: 1.8rem;
