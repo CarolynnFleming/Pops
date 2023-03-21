@@ -1,6 +1,6 @@
 import React from 'react'
 import threegdata from '../threegdata'
-import Threeg from '../components/ThreegScreen';
+import Threeg from '../components/Threeg';
 export default function ThreegScreen() {
   return (
     <div className="row center">
