@@ -161,7 +161,7 @@ img.medium {
   
 }
 /* card */
-.card{
+.card:hover{
   
   border:.1rem #c0c0c0 solid;
   background-color: #f8f8f8;
