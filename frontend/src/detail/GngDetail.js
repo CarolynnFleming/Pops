@@ -11,7 +11,7 @@ export default function GngDetail() {
     }
     return (
       <div>
-        <Link classname="back"to="/grabgo">Back to Bags</Link>
+        <Link classname="back"to="/gng">Back to Bags</Link>
           <div className='row top'>
               <div className='col-2'>
               <img className='large' src={gng.image} alt={gng.name}/>

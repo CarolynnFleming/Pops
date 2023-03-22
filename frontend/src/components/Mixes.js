@@ -4,11 +4,11 @@ export default function Mixes(props) {
     const { mixes } = props;
   return (
     <div key={mixes._id}className="card">
- <a href={`/offering/3/${mixes._id}`}>
+ <a href={`/mixesbags/${mixes._id}`}>
         <img className="medium"src={mixes.image} alt="popcorn bags"/>
     </a>
     <div className="card-body">
-        <a href={`/offering/3/${mixes._id}`}>
+        <a href={`/mixesbags/${mixes._id}`}>
             <h2>{mixes.name}</h2>
         </a>
         
