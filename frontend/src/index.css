@@ -59,6 +59,7 @@ h2{
   padding: 1rem 0;
   color:#1be7ff
 }
+
 .popcorn{
   border-radius: 40px;
   height: 60px;
@@ -69,8 +70,16 @@ h2{
 
 a{
   text-decoration: none;
-  color: #abff4f;
+  color: black;
  
+}
+ul{
+  padding:0;
+  margin:0;
+  list-style-type: none;
+}
+li{
+  margin-top: 1rem;
 }
 
 header a {
@@ -92,6 +101,16 @@ header a {
 .row.center {
   justify-content: center;
 }
+.row.top{
+  align-items: flex-start;
+}
+.col-1{
+  flex: 11 25rem;
+  margin: 2rem;
+}
+.col-2{
+  flex:  50rem;
+}
 .rainbow-4:hover{
   background-image:     linear-gradient(
      to right, 
@@ -111,7 +130,9 @@ header a {
     background-position:20vw;
   }
 }
-
+.button-85.block{
+  width:100%
+}
 .follow{
   margin-top: 40px;
 }
@@ -137,15 +158,17 @@ img{
 img.medium {
   max-width:29rem;
   width:100%;
-  border-radius:1rem;
+  
 }
 /* card */
-.card:hover {
-  border:0.1rem #c0c0c0 solid;
+.card{
+  
+  border:.1rem #c0c0c0 solid;
   background-color: #f8f8f8;
   border-radius: 0.5rem;
   box-shadow: 10px 10px 60px #29bf12;
-  margin: 3rem;
+  margin: 2rem;
+  
   
 }
 .card-body{
@@ -328,4 +351,15 @@ img.medium {
 }
 .about{
   font-size: 2rem;
+}
+/* alert */
+.success{
+  color: #20a020;
+}
+.error{
+  color: #a02020;
+}
+img.large{
+  width: 80%;
+  margin: 2rem;
 }
