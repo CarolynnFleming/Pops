@@ -1,6 +1,6 @@
 import React from 'react'
 import bagdata from '../bagdata';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 export default function BagDetail() {
@@ -11,7 +11,8 @@ export default function BagDetail() {
     }
     return (
       <div>
-          <div className='row'>
+        <Link classname="back"to="/Bags">Back to Bags</Link>
+          <div className='row top'>
               <div className='col-2'>
               <img className='large' src={bag.image} alt={bag.name}/>
               </div>
@@ -22,6 +23,9 @@ export default function BagDetail() {
                   </li>
                   <li>
                     Price : ${bag.price}
+                  </li>
+                  <li>
+                    description: {bag.description}
                   </li>
                 </ul>
               </div>
@@ -38,12 +42,12 @@ export default function BagDetail() {
                             <div className='row'>
                                 <div>Status</div>
                                 <div >
-                                    ${bag.countInStock> 0 ? ( <span className='success'>In Stock</span>): (<span className='error'>Unavailable</span>)}
+                                    {bag.countInStock> 0 ? ( <span className='success'>In Stock</span>): (<span className='error'>Unavailable</span>)}
                                     </div>
                             </div>
                         </li>
                         <li>
-                            <button className='primary block'>Add to Cart</button>
+                            <button className='button-85 block'>Add to Cart</button>
                         </li>
                     </ul>
                 </div>
