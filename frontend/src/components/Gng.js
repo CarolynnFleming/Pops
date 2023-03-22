@@ -4,11 +4,11 @@ export default function Gng(props) {
     const { gng } = props;
     return (
       <div key={gng._id}className="card">
-   <a href={`/offering/2/${gng._id}`}>
+   <a href={`/Gng/${gng._id}`}>
           <img className="medium"src={gng.image} alt="popcorn gngs"/>
       </a>
       <div className="card-body">
-          <a href={`/offering/2/${gng._id}`}>
+          <a href={`/Gng/${gng._id}`}>
               <h2>{gng.name}</h2>
           </a>
           

@@ -14,6 +14,7 @@ import SportstinScreen from './screens/SportstinScreen';
 import TwogScreen from './screens/TwogScreen';
 import ThreegScreen from './screens/ThreegScreen';
 import BagDetail from './detail/BagDetail';
+import GngDetail from './detail/GngDetail';
 function App() {
   return (
     <BrowserRouter>
@@ -40,18 +41,19 @@ function App() {
     <main>
       <Routes>
       <Route path="/about" element={<About/>}></Route>
-      <Route path="/3gallon tin" element={<ThreegScreen/>}></Route>
-      <Route path="/2 gallon tin" element={<TwogScreen/>}></Route>
-      <Route path="/1 gallon sports tin" element={<SportstinScreen/>}></Route>
-      <Route path="/1 gallon" element={<OnegScreen/>}></Route>
+      <Route path="/3gallontin" element={<ThreegScreen/>}></Route>
+      <Route path="/2gallontin" element={<TwogScreen/>}></Route>
+      <Route path="/1gallonsportstin" element={<SportstinScreen/>}></Route>
+      <Route path="/1gallon" element={<OnegScreen/>}></Route>
       <Route path="/bucket" element={<BucketScreen/>}></Route>
-      <Route path="/Grab & Go" element={<GrabnGoScreen/>}></Route>
+      <Route path="/Gng" element={<GrabnGoScreen/>}></Route>
       <Route path="/contactscreen" element={<ContactScreen/>}></Route>
       <Route path="/offeringscreen" element={<OfferingScreen/>}></Route>
       <Route path="/offeringscreen" element={<OfferingScreen/>}></Route>
-      <Route path="/bags/:id" element={<BagDetail/>}></Route>
-      <Route path="/bags" element={<BagScreen/>}></Route>
-      <Route path="/mixes bags" element={<MixesScreen/>}></Route>
+      <Route path="/Bags/:id" element={<BagDetail/>}></Route>
+      <Route path="/Gng/:id" element={<GngDetail/>}></Route>
+      <Route path="/Bags" element={<BagScreen/>}></Route>
+      <Route path="/mixesbags" element={<MixesScreen/>}></Route>
       <Route path="/" element={<HomeScreen/>} exact></Route>
       </Routes>
       

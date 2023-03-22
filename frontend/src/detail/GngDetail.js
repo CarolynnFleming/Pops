@@ -1,31 +1,31 @@
 import React from 'react'
-import bagdata from '../bagdata';
+import gngdata from '../gngdata';
 import { Link, useParams } from 'react-router-dom';
 
 
-export default function BagDetail() {
+export default function GngDetail() {
     const { id } = useParams();
-    const bag = bagdata.bag.find((x) => x._id === id);
-    if(!bag) {
+    const gng = gngdata.gng.find((x) => x._id === id);
+    if(!gng) {
         return <div> Product Not Found</div>
     }
     return (
       <div>
-        <Link className="back"to="/Bags">Back to Bags</Link>
+        <Link classname="back"to="/grabgo">Back to Bags</Link>
           <div className='row top'>
               <div className='col-2'>
-              <img className='large' src={bag.image} alt={bag.name}/>
+              <img className='large' src={gng.image} alt={gng.name}/>
               </div>
               <div className='col-1'>
                 <ul>
                     <li>
-                  <h1>{bag.name}</h1>
+                  <h1>{gng.name}</h1>
                   </li>
                   <li>
-                    Price : ${bag.price}
+                    Price : ${gng.price}
                   </li>
                   <li>
-                    description: {bag.description}
+                    description: {gng.description}
                   </li>
                 </ul>
               </div>
@@ -35,14 +35,14 @@ export default function BagDetail() {
                         <li>
                             <div className='row'>
                                 <div>Price</div>
-                                <div className='price'>${bag.price}</div>
+                                <div className='price'>${gng.price}</div>
                             </div>
                         </li>
                         <li>
                             <div className='row'>
                                 <div>Status</div>
                                 <div >
-                                    {bag.countInStock> 0 ? ( <span className='success'>In Stock</span>): (<span className='error'>Unavailable</span>)}
+                                    {gng.countInStock> 0 ? ( <span className='success'>In Stock</span>): (<span className='error'>Unavailable</span>)}
                                     </div>
                             </div>
                         </li>
