@@ -3,7 +3,7 @@ const threegdata = {
         {
             _id:'1',
             name: 'cheese',
-            image:'/public/Cheddar-popcorn .jpg',
+            image:'/public/Cheddar-popcorn.jpg',
             price: 52.25,  
         },
         {
@@ -15,7 +15,7 @@ const threegdata = {
         {
             _id:'3',
             name: 'caramel',
-            image:'/public/caramel .jpeg',
+            image:'/public/caramel.jpeg',
             price: 61.25,
               
         },

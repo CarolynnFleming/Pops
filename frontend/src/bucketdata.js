@@ -3,7 +3,7 @@ const bucketdata = {
         {
             _id:'1',
             name: 'cheese',
-            image:'/public/Cheddar-popcorn .jpg',
+            image:'/public/Cheddar-popcorn.jpg',
             price: 18.99,  
         },
         {
@@ -15,7 +15,7 @@ const bucketdata = {
         {
             _id:'3',
             name: 'caramel',
-            image:'/public/caramel .jpeg',
+            image:'/public/caramel.jpeg',
             price: 22.99,
               
         },

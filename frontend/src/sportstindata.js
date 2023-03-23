@@ -3,7 +3,7 @@ const sportstindata = {
         {
             _id:'1',
             name: 'cheese',
-            image:'/public/Cheddar-popcorn .jpg',
+            image:'/public/Cheddar-popcorn.jpg',
             price: 28.75,  
         },
         {
@@ -15,7 +15,7 @@ const sportstindata = {
         {
             _id:'3',
             name: 'caramel',
-            image:'/public/caramel .jpeg',
+            image:'/public/caramel.jpeg',
             price: 32.75,
               
         },

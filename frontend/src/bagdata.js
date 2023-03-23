@@ -3,7 +3,7 @@ const bagdata = {
         {
             _id:'1',
             name: 'cheese',
-            image:'/public/Cheddar-popcorn .jpg',
+            image:'/public/Cheddar-popcorn.jpg',
             price: 6.25,
             countInStock:10,
             sizes: 'SM',
@@ -12,7 +12,7 @@ const bagdata = {
         {
             _id:'2',
             name: 'cheese',
-            image:'/public/Cheddar-popcorn .jpg',
+            image:'/public/Cheddar-popcorn.jpg',
             countInStock:0,
             price: 8.25,
             sizes: 'MD', 
@@ -21,7 +21,7 @@ const bagdata = {
         {
             _id:'3',
             name: 'cheese',
-            image:'/public/Cheddar-popcorn .jpg',
+            image:'/public/Cheddar-popcorn.jpg',
             countInStock:0,
             price: 10.50,
             sizes: 'LG',
@@ -30,7 +30,7 @@ const bagdata = {
         {
             _id:'4',
             name: 'cheese',
-            image:'/public/Cheddar-popcorn .jpg',
+            image:'/public/Cheddar-popcorn.jpg',
             countInStock:10,
             price: 13,
             sizes: 'XL',  
@@ -39,7 +39,7 @@ const bagdata = {
         {
             _id:'5',
             name: 'caramel',
-            image:'/public/caramel .jpeg',
+            image:'/public/caramel.jpeg',
             countInStock:10,
             price: 6.75,
             sizes: 'SM', 
@@ -48,7 +48,7 @@ const bagdata = {
         {
             _id:'6',
             name: 'caramel',
-            image:'/public/caramel .jpeg',
+            image:'/public/caramel.jpeg',
             countInStock:10,
             price: 9.50,
             sizes: 'MD', 
@@ -57,7 +57,7 @@ const bagdata = {
         {
             _id:'7',
             name: 'caramel',
-            image:'/public/caramel .jpeg',
+            image:'/public/caramel.jpeg',
             countInStock:10,
             price: 14.50,
             sizes: 'LG', 
@@ -66,7 +66,7 @@ const bagdata = {
         {
             _id:'8',
             name: 'caramel',
-            image:'/public/caramel .jpeg',
+            image:'/public/caramel.jpeg',
             countInStock:10,
             price: 16.75,
             sizes: 'XL',  
