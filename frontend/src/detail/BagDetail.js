@@ -42,7 +42,7 @@ export default function BagDetail() {
                             <div className='row'>
                                 <div>Status</div>
                                 <div >
-                                    {bag.countInStock> 0 ? ( <span className='success'>In Stock</span>): (<span className='error'>Unavailable</span>)}
+                                    {bag.countInStock> 0 ? ( <span className='success'>In Stock</span>): (<span className='danger'>Unavailable</span>)}
                                     </div>
                             </div>
                         </li>

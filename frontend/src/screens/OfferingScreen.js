@@ -1,17 +1,44 @@
 import React from 'react'
-import data from '../data';
 import Offering from '../components/Offering';
-
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import MessageBox from '../components/MessageBox'
+import LoadingBox from '../components/LoadingBox'
 export default function OfferingScreen() {
+  const [offerings, setOfferings] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  useEffect(() => {
+const fetchData = async () => {
+  try{
+    setLoading(true);
+    const { data } = await axios.get('/api/offerings');
+  setLoading(false);
+  setOfferings(data);
+  } catch (err) {
+    setError(err.message);
+    setLoading(false)
+  }
+  
+}
+fetchData();
+  }, [])
   return (
-    <div className="row center">
-        {
-        data.offerings.map((offering) =>(
+    <div>
+      {loading ? (
+      <LoadingBox></LoadingBox>
+      ): error ? (
+      <MessageBox variant='danger'>{error}</MessageBox>
+   ):( 
+   <div className="row center">
+        {offerings.map((offering) =>(
           <Offering key={offering.name} offering={offering}></Offering>
 
-        ))
-      }
+        ))}
+        </div>
+     )}
    
+      
       </div>
   )
 }
