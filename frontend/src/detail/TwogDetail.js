@@ -1,5 +1,5 @@
 import React from 'react'
-import twogdata from '../twogdata';
+import twogdata from '../data/twogdata';
 import { Link, useParams } from 'react-router-dom';
 
 

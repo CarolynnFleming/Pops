@@ -1,5 +1,5 @@
 import React from 'react'
-import onegdata from '../onegdata';
+import onegdata from '../data/onegdata';
 import { Link, useParams } from 'react-router-dom';
 
 

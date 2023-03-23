@@ -13,7 +13,7 @@ export default function MixesScreen() {
 const fetchData = async () => {
   try{
     setLoading(true);
-    const { data } = await axios.get('/api/mixes');
+    const { data } = await axios.get('/api/mixesbags');
   setLoading(false);
   setmixes(data);
   } catch (err) {

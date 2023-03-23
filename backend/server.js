@@ -19,7 +19,7 @@ app.get('/api/bags', (req, res) => {
 app.get('/api/Gng', (req, res) => {
     res.send(gngdata.gng);
 })
-app.get('/api/mixes', (req, res) => {
+app.get('/api/mixesbags', (req, res) => {
     res.send(mixesdata.mixes);
 })
 app.get('/api/bucket', (req, res) => {
