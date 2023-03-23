@@ -10,7 +10,7 @@ app.get('/api/offerings', (req, res) => {
 app.get('/', (req, res) => {
     res.send('Server is ready');
 });
-
-app.listen(5100, () => {
-    console.log('Server at http://localhost:5100');
+const port = process.env.PORT || 5100;
+app.listen(port, () => {
+    console.log(`Server at http://localhost:${port}`);
 });
