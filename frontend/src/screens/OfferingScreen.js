@@ -2,6 +2,8 @@ import React from 'react'
 import Offering from '../components/Offering';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import MessageBox from '../components/MessageBox'
+import LoadingBox from '../components/LoadingBox'
 export default function OfferingScreen() {
   const [offerings, setOfferings] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,7 +28,7 @@ fetchData();
       {loading ? (
       <LoadingBox></LoadingBox>
       ): error ? (
-      <MessageBox>{error}</MessageBox>
+      <MessageBox variant='danger'>{error}</MessageBox>
    ):( 
    <div className="row center">
         {offerings.map((offering) =>(
