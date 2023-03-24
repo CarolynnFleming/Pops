@@ -1,30 +1,21 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { listThreeg } from '../actions/threegActions';
 import MessageBox from '../components/MessageBox'
 import LoadingBox from '../components/LoadingBox'
 import Threeg from '../components/Threeg';
 export default function ThreegScreen() {
-  const [threeg, setthreeg] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const threegList = useSelector((state) => state.threegList);
+  const { loading, error, threeg  } = threegList;
   useEffect(() => {
-const fetchData = async () => {
-  try{
-    setLoading(true);
-    const { data } = await axios.get('/api/threeg');
-  setLoading(false);
-  setthreeg(data);
-  } catch (err) {
-    setError(err.message);
-    setLoading(false)
-  }
-  
-}
-fetchData();
-  }, [])
+    dispatch(listThreeg());
+  }, [dispatch])
   return (
     <div>
+      <Link className="back"to="/offeringscreen">Back to Offerings</Link>
     {loading ? (
     <LoadingBox></LoadingBox>
     ): error ? (

@@ -1,30 +1,21 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+import {  useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { listSportstin } from '../actions/sportstinActions';
 import MessageBox from '../components/MessageBox'
 import LoadingBox from '../components/LoadingBox'
 import Sportstin from '../components/Sportstin';
 export default function SportstinScreen() {
-  const [sportstin, setsportstin] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const sportstinList = useSelector((state) => state.sportstinList);
+  const { loading, error, sportstin  } = sportstinList;
   useEffect(() => {
-const fetchData = async () => {
-  try{
-    setLoading(true);
-    const { data } = await axios.get('/api/sportstin');
-  setLoading(false);
-  setsportstin(data);
-  } catch (err) {
-    setError(err.message);
-    setLoading(false)
-  }
-  
-}
-fetchData();
-  }, [])
+    dispatch(listSportstin());
+  }, [dispatch])
   return (
     <div>
+      <Link className="back"to="/offeringscreen">Back to Offerings</Link>
       {loading ? (
       <LoadingBox></LoadingBox>
       ): error ? (

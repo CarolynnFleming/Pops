@@ -11,7 +11,7 @@ export default function SportstinDetail() {
     }
     return (
       <div>
-        <Link classname="back"to="/sportstin">Back to Bags</Link>
+        <Link classname="back"to="/sportstin">Back to SportsTin</Link>
           <div className='row top'>
               <div className='col-2'>
               <img className='large' src={sportstin.image} alt={sportstin.name}/>

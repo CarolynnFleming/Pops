@@ -1,30 +1,21 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { listBucket } from '../actions/bucketActions';
 import MessageBox from '../components/MessageBox'
 import LoadingBox from '../components/LoadingBox'
 import Bucket from '../components/Bucket';
 export default function BucketScreen() {
-  const [bucket, setbucket] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const bucketList = useSelector((state) => state.bucketList);
+  const { loading, error, bucket  } = bucketList;
   useEffect(() => {
-const fetchData = async () => {
-  try{
-    setLoading(true);
-    const { data } = await axios.get('/api/bucket');
-  setLoading(false);
-  setbucket(data);
-  } catch (err) {
-    setError(err.message);
-    setLoading(false)
-  }
-  
-}
-fetchData();
-  }, [])
+    dispatch(listBucket());
+  }, [dispatch])
   return (
     <div>
+      <Link className="back"to="/offeringscreen">Back to Offerings</Link>
     {loading ? (
     <LoadingBox></LoadingBox>
     ): error ? (

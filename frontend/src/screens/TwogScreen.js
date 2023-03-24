@@ -1,30 +1,21 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { listTwog } from '../actions/twogActions';
 import MessageBox from '../components/MessageBox'
 import LoadingBox from '../components/LoadingBox'
 import Twog from '../components/Twog';
 export default function TwogScreen() {
-  const [twog, settwog] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const twogList = useSelector((state) => state.twogList);
+  const { loading, error, twog  } = twogList;
   useEffect(() => {
-const fetchData = async () => {
-  try{
-    setLoading(true);
-    const { data } = await axios.get('/api/twog');
-  setLoading(false);
-  settwog(data);
-  } catch (err) {
-    setError(err.message);
-    setLoading(false)
-  }
-  
-}
-fetchData();
-  }, [])
+    dispatch(listTwog());
+  }, [dispatch])
   return (
     <div>
+      <Link className="back"to="/offeringscreen">Back to Offerings</Link>
     {loading ? (
     <LoadingBox></LoadingBox>
     ): error ? (

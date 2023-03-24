@@ -1,31 +1,23 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { listMixes } from '../actions/mixesActions';
 import MessageBox from '../components/MessageBox'
 import LoadingBox from '../components/LoadingBox'
 import Mixes from '../components/Mixes';
 
 export default function MixesScreen() {
-  const [mixes, setmixes] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const mixesList = useSelector((state) => state.mixesList);
+  const { loading, error, mixes  } = mixesList;
   useEffect(() => {
-const fetchData = async () => {
-  try{
-    setLoading(true);
-    const { data } = await axios.get('/api/mixesbags');
-  setLoading(false);
-  setmixes(data);
-  } catch (err) {
-    setError(err.message);
-    setLoading(false)
-  }
-  
-}
-fetchData();
-  }, [])
+
+  dispatch(listMixes());
+  }, [dispatch])
   return (
     <div>
+      <Link className="back"to="/offeringscreen">Back to Offerings</Link>
       {loading ? (
       <LoadingBox></LoadingBox>
       ): error ? (

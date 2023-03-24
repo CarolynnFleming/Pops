@@ -1,31 +1,23 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { listBag } from '../actions/bagActions';
 import MessageBox from '../components/MessageBox'
 import LoadingBox from '../components/LoadingBox'
 import Bags from '../components/Bags';
 
 export default function BagScreen() {
-  const [bag, setBag] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const bagList = useSelector((state) => state.bagList);
+  const { loading, error, bag  } = bagList;
   useEffect(() => {
-const fetchData = async () => {
-  try{
-    setLoading(true);
-    const { data } = await axios.get('/api/bags');
-  setLoading(false);
-  setBag(data);
-  } catch (err) {
-    setError(err.message);
-    setLoading(false)
-  }
-  
-}
-fetchData();
-  }, [])
+    dispatch(listBag());
+
+  }, [dispatch])
   return (
     <div>
+      <Link className="back"to="/offeringscreen">Back to Offerings</Link>
       {loading ? (
       <LoadingBox></LoadingBox>
       ): error ? (
