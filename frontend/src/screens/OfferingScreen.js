@@ -1,28 +1,20 @@
 import React from 'react'
 import Offering from '../components/Offering';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
 import MessageBox from '../components/MessageBox'
 import LoadingBox from '../components/LoadingBox'
+import { listOfferings } from '../actions/offeringActions';
+
+
 export default function OfferingScreen() {
-  const [offerings, setOfferings] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const offeringList = useSelector((state) => state.offeringList);
+  const { loading, error, offerings  } = offeringList;
   useEffect(() => {
-const fetchData = async () => {
-  try{
-    setLoading(true);
-    const { data } = await axios.get('/api/offerings');
-  setLoading(false);
-  setOfferings(data);
-  } catch (err) {
-    setError(err.message);
-    setLoading(false)
-  }
-  
-}
-fetchData();
-  }, [])
+    dispatch(listOfferings());
+  }, [dispatch])
   return (
     <div>
       {loading ? (
