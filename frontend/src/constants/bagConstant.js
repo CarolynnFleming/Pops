@@ -1,0 +1,3 @@
+export const BAG_LIST_REQUEST = 'BAG_LIST_REQUEST';
+export const BAG_LIST_SUCCESS = 'BAG_LIST_SUCCESS';
+export const BAG_LIST_FAIL = 'BAG_LIST_FAIL';
