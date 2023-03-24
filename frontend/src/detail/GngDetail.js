@@ -1,5 +1,5 @@
 import React from 'react'
-import gngdata from '../gngdata';
+import gngdata from '../data/gngdata';
 import { Link, useParams } from 'react-router-dom';
 
 

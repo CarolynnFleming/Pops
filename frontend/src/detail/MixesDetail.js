@@ -1,5 +1,5 @@
 import React from 'react'
-import mixesdata from '../mixesdata';
+import mixesdata from '../data/mixesdata';
 import { Link, useParams } from 'react-router-dom';
 
 
@@ -11,7 +11,7 @@ export default function MixesDetail() {
     }
     return (
       <div>
-        <Link classname="back"to="/mixes">Back to Bags</Link>
+        <Link className="back"to="/mixesbags">Back to Bags</Link>
           <div className='row top'>
               <div className='col-2'>
               <img className='large' src={mixes.image} alt={mixes.name}/>

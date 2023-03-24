@@ -1,5 +1,5 @@
 import React from 'react'
-import sportstindata from '../sportstindata';
+import sportstindata from '../data/sportstindata';
 import { Link, useParams } from 'react-router-dom';
 
 

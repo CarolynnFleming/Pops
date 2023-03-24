@@ -1,5 +1,5 @@
 import React from 'react'
-import bagdata from '../bagdata';
+import bagdata from '../data/bagdata';
 import { Link, useParams } from 'react-router-dom';
 
 

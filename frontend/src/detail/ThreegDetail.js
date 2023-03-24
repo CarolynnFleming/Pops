@@ -1,5 +1,5 @@
 import React from 'react'
-import threegdata from '../threegdata';
+import threegdata from '../data/threegdata';
 import { Link, useParams } from 'react-router-dom';
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import bucketdata from '../bucketdata';
+import bucketdata from '../data/bucketdata';
 import { Link, useParams } from 'react-router-dom';
 
 
