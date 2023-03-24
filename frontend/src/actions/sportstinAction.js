@@ -1,13 +1,13 @@
-import { OFFERING_LIST_FAIL, OFFERING_LIST_REQUEST, OFFERING_LIST_SUCCESS } from "../constants/offeringConstants"
+import { SPORTSTIN_LIST_FAIL, SPORTSTIN_LIST_REQUEST, SPORTSTIN_LIST_SUCCESS } from "../constants/sportstinConstants"
 import Axios from 'axios';
-export const listOfferings = () => async (dispatch) => {
+export const listSportstin = () => async (dispatch) => {
     dispatch({
-        type: OFFERING_LIST_REQUEST,
+        type: SPORTSTIN_LIST_REQUEST,
     });
     try{
-        const { data } = await Axios.get('/api/offerings');
-        dispatch({ type: OFFERING_LIST_SUCCESS, payload: data });
+        const { data } = await Axios.get('/api/sportstin');
+        dispatch({ type: SPORTSTIN_LIST_SUCCESS, payload: data });
     }catch(error){
-      dispatch({ type: OFFERING_LIST_FAIL, payload: error.message });  
+      dispatch({ type: SPORTSTIN_LIST_FAIL, payload: error.message });  
     }
 }
