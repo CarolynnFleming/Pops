@@ -12,10 +12,27 @@ const app = express();
 
 app.get('/api/offerings', (req, res) => {
     res.send(data.offerings);
-})
+});
+app.get('/api/bags/:id', (req, res) => {
+    const bag = bagdata.bag.find((x) => x.id === req.params._id);
+    if (bag) {
+      res.send(bag);
+    } else {
+      res.status(404).send({ message: 'Product Not Found' });
+    }
+  });
+  app.get('/api/mixesbags/:id', (req, res) => {
+    const mixes = mixesdata.mixes.find((x) => x.id === req.params._id);
+    if (mixes) {
+      res.send(mixes);
+    } else {
+      res.status(404).send({ message: 'Product Not Found' });
+    }
+  });
 app.get('/api/bags', (req, res) => {
     res.send(bagdata.bag);
 })
+
 app.get('/api/Gng', (req, res) => {
     res.send(gngdata.gng);
 })
