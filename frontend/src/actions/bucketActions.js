@@ -1,4 +1,5 @@
-import { BUCKET_LIST_FAIL, BUCKET_LIST_REQUEST, BUCKET_LIST_SUCCESS } from "../constants/bucketConstants"
+import { BUCKET_DETAILS_REQUEST, BUCKET_DETAILS_SUCCESS, BUCKET_DETAILS_FAIL,
+     BUCKET_LIST_FAIL, BUCKET_LIST_REQUEST, BUCKET_LIST_SUCCESS } from "../constants/bucketConstants"
 import Axios from 'axios';
 export const listBucket = () => async (dispatch) => {
     dispatch({
@@ -10,4 +11,20 @@ export const listBucket = () => async (dispatch) => {
     }catch(error){
       dispatch({ type: BUCKET_LIST_FAIL, payload: error.message });  
     }
-}
+};
+
+export const detailsBucket = (_id) => async (dispatch) => {
+    dispatch({ type:BUCKET_DETAILS_REQUEST, payload:_id });
+    try {
+      const {data}  = await Axios.get(`/api/bucket/${_id}`);
+      dispatch({ type:BUCKET_DETAILS_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({
+        type:BUCKET_DETAILS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };

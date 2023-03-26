@@ -1,31 +1,46 @@
-import React from 'react'
-import twogdata from '../data/twogdata';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { detailsTwog } from '../actions/twogActions';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 
 export default function TwogDetail() {
-    const { id } = useParams();
-    const twog = twogdata.twog.find((x) => x._id === id);
-    if(!twog) {
-        return <div> Product Not Found</div>
-    }
+  const dispatch = useDispatch(); 
+  const { id: _id }= useParams();
+  
+   const twogDetails = useSelector((state) => state.twogDetails);
+  const { loading, error, twog } = twogDetails;
+
+  useEffect(() => {
+    dispatch(detailsTwog(_id));
+  }, [dispatch, _id]);
     return (
       <div>
-        <Link classname="back"to="/twog">Back to 2 Gallon</Link>
+  
+          {loading ? (
+          <LoadingBox></LoadingBox>
+          ): error ? (
+          <MessageBox variant='danger'>{error}</MessageBox>
+       ):( 
+        <div>
+        <Link className="back"to="/twog">Back to twogs</Link>
           <div className='row top'>
               <div className='col-2'>
-              <img className='large' src={twog.image} alt={twog.name}/>
+              <img className='large' src={twog?.image} alt={twog?.name}/>
+              
               </div>
               <div className='col-1'>
                 <ul>
                     <li>
-                  <h1>{twog.name}</h1>
+                  <h1>{twog?.name}</h1>
                   </li>
                   <li>
-                    Price : ${twog.price}
+                    Price : ${twog?.price}
                   </li>
                   <li>
-                    description: {twog.description}
+                    description: {twog?.description}
                   </li>
                 </ul>
               </div>
@@ -35,14 +50,14 @@ export default function TwogDetail() {
                         <li>
                             <div className='row'>
                                 <div>Price</div>
-                                <div className='price'>${twog.price}</div>
+                                <div className='price'>${twog?.price}</div>
                             </div>
                         </li>
                         <li>
                             <div className='row'>
                                 <div>Status</div>
                                 <div >
-                                    {twog.countInStock> 0 ? ( <span className='success'>In Stock</span>): (<span className='error'>Unavailable</span>)}
+                                    {twog?.countInStock> 0 ? ( <span className='success'>In Stock</span>): (<span className='danger'>Unavailable</span>)}
                                     </div>
                             </div>
                         </li>
@@ -54,5 +69,7 @@ export default function TwogDetail() {
               </div>
           </div>
       </div>
+         )}
+      </div> 
     )
 }

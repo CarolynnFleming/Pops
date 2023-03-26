@@ -1,4 +1,5 @@
-import { TWOG_LIST_FAIL, TWOG_LIST_REQUEST, TWOG_LIST_SUCCESS } from "../constants/twogConstants"
+import { TWOG_DETAILS_REQUEST, TWOG_DETAILS_SUCCESS, TWOG_DETAILS_FAIL,
+    TWOG_LIST_FAIL, TWOG_LIST_REQUEST, TWOG_LIST_SUCCESS } from "../constants/twogConstants"
 import Axios from 'axios';
 export const listTwog = () => async (dispatch) => {
     dispatch({
@@ -10,4 +11,20 @@ export const listTwog = () => async (dispatch) => {
     }catch(error){
       dispatch({ type: TWOG_LIST_FAIL, payload: error.message });  
     }
-}
+};
+
+export const detailsTwog = (_id) => async (dispatch) => {
+    dispatch({ type:TWOG_DETAILS_REQUEST, payload:_id });
+    try {
+      const {data}  = await Axios.get(`/api/twog/${_id}`);
+      dispatch({ type:TWOG_DETAILS_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({
+        type:TWOG_DETAILS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };

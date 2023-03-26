@@ -1,4 +1,5 @@
-import { THREEG_LIST_FAIL, THREEG_LIST_REQUEST, THREEG_LIST_SUCCESS } from "../constants/threegConstants"
+import { THREEG_DETAILS_REQUEST, THREEG_DETAILS_SUCCESS, THREEG_DETAILS_FAIL,
+    THREEG_LIST_FAIL, THREEG_LIST_REQUEST, THREEG_LIST_SUCCESS } from "../constants/threegConstants"
 import Axios from 'axios';
 export const listThreeg = () => async (dispatch) => {
     dispatch({
@@ -10,4 +11,20 @@ export const listThreeg = () => async (dispatch) => {
     }catch(error){
       dispatch({ type: THREEG_LIST_FAIL, payload: error.message });  
     }
-}
+};
+
+export const detailsThreeg = (_id) => async (dispatch) => {
+    dispatch({ type:THREEG_DETAILS_REQUEST, payload:_id });
+    try {
+      const {data}  = await Axios.get(`/api/threeg/${_id}`);
+      dispatch({ type:THREEG_DETAILS_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({
+        type:THREEG_DETAILS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
