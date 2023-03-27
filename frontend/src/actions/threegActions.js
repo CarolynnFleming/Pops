@@ -13,10 +13,10 @@ export const listThreeg = () => async (dispatch) => {
     }
 };
 
-export const detailsThreeg = (_id) => async (dispatch) => {
-    dispatch({ type:THREEG_DETAILS_REQUEST, payload:_id });
+export const detailsThreeg = (id) => async (dispatch) => {
+    dispatch({ type:THREEG_DETAILS_REQUEST, payload:id });
     try {
-      const {data}  = await Axios.get(`/api/threeg/${_id}`);
+      const {data}  = await Axios.get(`/api/threeg/${id}`);
       dispatch({ type:THREEG_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

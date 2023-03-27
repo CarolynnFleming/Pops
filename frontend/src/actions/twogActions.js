@@ -13,10 +13,10 @@ export const listTwog = () => async (dispatch) => {
     }
 };
 
-export const detailsTwog = (_id) => async (dispatch) => {
-    dispatch({ type:TWOG_DETAILS_REQUEST, payload:_id });
+export const detailsTwog = (id) => async (dispatch) => {
+    dispatch({ type:TWOG_DETAILS_REQUEST, payload:id });
     try {
-      const {data}  = await Axios.get(`/api/twog/${_id}`);
+      const {data}  = await Axios.get(`/api/twog/${id}`);
       dispatch({ type:TWOG_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

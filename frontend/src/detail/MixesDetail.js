@@ -8,14 +8,14 @@ import MessageBox from '../components/MessageBox';
 
 export default function MixesDetail() {
   const dispatch = useDispatch(); 
-  const { id: _id }= useParams();
+  const { id }= useParams();
   
    const mixesDetails = useSelector((state) => state.mixesDetails);
   const { loading, error, mixes } = mixesDetails;
 
   useEffect(() => {
-    dispatch(detailsMixes(_id));
-  }, [dispatch, _id]);
+    dispatch(detailsMixes(id));
+  }, [dispatch, id]);
 
     return (
         <div>

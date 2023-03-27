@@ -129,7 +129,7 @@ const bagdata = {
             _id:'15',
             name: 'nutty caramel',
             image:'/public/Sm-bag.jpg',
-            countInStock:10,
+            countInStock:0,
             price: 14.50,
             sizes: 'LG',  
             description:'A large nutty caramel bag'

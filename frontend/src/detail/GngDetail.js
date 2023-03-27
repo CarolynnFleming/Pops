@@ -8,14 +8,14 @@ import MessageBox from '../components/MessageBox';
 
 export default function GngDetail() {
   const dispatch = useDispatch(); 
-  const { id: _id }= useParams();
+  const { id }= useParams();
   
    const gngDetails = useSelector((state) => state.gngDetails);
   const { loading, error, gng } = gngDetails;
 
   useEffect(() => {
-    dispatch(detailsGng(_id));
-  }, [dispatch, _id]);
+    dispatch(detailsGng(id));
+  }, [dispatch, id]);
     return (
       <div>
   

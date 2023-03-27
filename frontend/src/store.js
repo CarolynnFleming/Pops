@@ -9,9 +9,16 @@ import { onegDetailsReducer, onegListReducer } from './reducers/onegReducers';
 import { mixesDetailsReducer, mixesListReducer } from './reducers/mixesReducers';
 import { twogDetailsReducer, twogListReducer } from './reducers/twogReducers';
 import { threegDetailsReducer, threegListReducer } from './reducers/threegReducers';
+import { cartReducer } from './reducers/cartReducers';
 
 
-const initialState = {};
+const initialState = {
+    cart:{
+        cartItems: localStorage.getItem('cartItems') 
+        ? JSON.parse(localStorage.getItem('cartItems'))
+        : [],
+    },
+};
 const reducer = combineReducers({
     offeringList: offeringListReducer,
     bagList: bagListReducer,
@@ -29,7 +36,8 @@ const reducer = combineReducers({
     onegDetails: onegDetailsReducer,
     sportstinDetails: sportstinDetailsReducer,
     twogDetails: twogDetailsReducer,
-    threegDetails: threegDetailsReducer
+    threegDetails: threegDetailsReducer,
+    cart: cartReducer
 })
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore( 

@@ -13,10 +13,10 @@ export const listMixes = () => async (dispatch) => {
     }
 };
 
-export const detailsMixes = (_id) => async (dispatch) => {
-    dispatch({ type:MIXES_DETAILS_REQUEST, payload:_id });
+export const detailsMixes = (id) => async (dispatch) => {
+    dispatch({ type:MIXES_DETAILS_REQUEST, payload:id });
     try {
-      const {data}  = await Axios.get(`/api/mixesbags/${_id}`);
+      const {data}  = await Axios.get(`/api/mixesbags/${id}`);
       dispatch({ type:MIXES_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

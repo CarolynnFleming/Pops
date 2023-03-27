@@ -13,10 +13,10 @@ export const listBucket = () => async (dispatch) => {
     }
 };
 
-export const detailsBucket = (_id) => async (dispatch) => {
-    dispatch({ type:BUCKET_DETAILS_REQUEST, payload:_id });
+export const detailsBucket = (id) => async (dispatch) => {
+    dispatch({ type:BUCKET_DETAILS_REQUEST, payload:id });
     try {
-      const {data}  = await Axios.get(`/api/bucket/${_id}`);
+      const {data}  = await Axios.get(`/api/bucket/${id}`);
       dispatch({ type:BUCKET_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

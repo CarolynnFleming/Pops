@@ -8,14 +8,14 @@ import MessageBox from '../components/MessageBox';
 
 export default function SportstinDetail() {
   const dispatch = useDispatch(); 
-  const { id: _id }= useParams();
+  const { id }= useParams();
   
    const sportstinDetails = useSelector((state) => state.sportstinDetails);
   const { loading, error, sportstin } = sportstinDetails;
 
   useEffect(() => {
-    dispatch(detailsSportstin(_id));
-  }, [dispatch, _id]);
+    dispatch(detailsSportstin(id));
+  }, [dispatch, id]);
     return (
       <div>
   

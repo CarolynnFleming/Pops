@@ -8,14 +8,14 @@ import MessageBox from '../components/MessageBox';
 
 export default function TwogDetail() {
   const dispatch = useDispatch(); 
-  const { id: _id }= useParams();
+  const { id }= useParams();
   
    const twogDetails = useSelector((state) => state.twogDetails);
   const { loading, error, twog } = twogDetails;
 
   useEffect(() => {
-    dispatch(detailsTwog(_id));
-  }, [dispatch, _id]);
+    dispatch(detailsTwog(id));
+  }, [dispatch, id]);
     return (
       <div>
   

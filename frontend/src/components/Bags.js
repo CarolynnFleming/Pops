@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Bags(props) {
     const { bag } = props;
   return (
     <div key={bag._id}className="card">
- <a href={`/Bags/${bag._id}`}>
+ <Link to={`/Bags/${bag._id}`}>
         <img className="medium"src={bag.image} alt="popcorn bags"/>
-    </a>
+    </Link>
     <div className="card-body">
-        <a href={`/Bags/${bag._id}`}>
+        <Link to={`/Bags/${bag._id}`}>
             <h2>{bag.name}</h2>
-        </a>
+        </Link>
         
       <div className="detail">{bag.sizes}<br/> ${bag.price}</div>
     </div>

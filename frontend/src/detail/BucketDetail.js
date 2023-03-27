@@ -8,14 +8,14 @@ import MessageBox from '../components/MessageBox';
 
 export default function BucketDetail() {
   const dispatch = useDispatch(); 
-  const { id: _id }= useParams();
+  const { id }= useParams();
   
    const bucketDetails = useSelector((state) => state.bucketDetails);
   const { loading, error, bucket } = bucketDetails;
 
   useEffect(() => {
-    dispatch(detailsBucket(_id));
-  }, [dispatch, _id]);
+    dispatch(detailsBucket(id));
+  }, [dispatch, id]);
 
     
     return (

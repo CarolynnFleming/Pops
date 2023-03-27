@@ -8,12 +8,12 @@ import MessageBox from '../components/MessageBox';
 
 export default function OnegDetail() {
   const dispatch = useDispatch(); 
-  const { id: _id }= useParams();
+  const { id }= useParams();
    const onegDetails = useSelector((state) => state.onegDetails);
   const { loading, error, oneg } = onegDetails;
   useEffect(() => {
-    dispatch(detailsOneg(_id));
-  }, [dispatch, _id]);
+    dispatch(detailsOneg(id));
+  }, [dispatch, id]);
 
     return (
       <div>

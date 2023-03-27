@@ -13,10 +13,10 @@ export const listSportstin = () => async (dispatch) => {
     }
 };
 
-export const detailsSportstin = (_id) => async (dispatch) => {
-    dispatch({ type:SPORTSTIN_DETAILS_REQUEST, payload:_id });
+export const detailsSportstin = (id) => async (dispatch) => {
+    dispatch({ type:SPORTSTIN_DETAILS_REQUEST, payload:id });
     try {
-      const {data}  = await Axios.get(`/api/sportstin/${_id}`);
+      const {data}  = await Axios.get(`/api/sportstin/${id}`);
       dispatch({ type:SPORTSTIN_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

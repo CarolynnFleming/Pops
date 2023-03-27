@@ -8,14 +8,14 @@ import MessageBox from '../components/MessageBox';
 
 export default function ThreegDetail() {
   const dispatch = useDispatch(); 
-  const { id: _id }= useParams();
+  const { id }= useParams();
   
    const threegDetails = useSelector((state) => state.threegDetails);
   const { loading, error, threeg } = threegDetails;
 
   useEffect(() => {
-    dispatch(detailsThreeg(_id));
-  }, [dispatch, _id]);
+    dispatch(detailsThreeg(id));
+  }, [dispatch, id]);
 
     return (
       <div>

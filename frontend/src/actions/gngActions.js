@@ -13,10 +13,10 @@ export const listGng = () => async (dispatch) => {
     }
 };
 
-export const detailsGng = (_id) => async (dispatch) => {
-    dispatch({ type:GNG_DETAILS_REQUEST, payload:_id });
+export const detailsGng = (id) => async (dispatch) => {
+    dispatch({ type:GNG_DETAILS_REQUEST, payload:id });
     try {
-      const {data}  = await Axios.get(`/api/Gng/${_id}`);
+      const {data}  = await Axios.get(`/api/Gng/${id}`);
       dispatch({ type:GNG_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

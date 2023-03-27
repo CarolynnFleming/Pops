@@ -13,10 +13,10 @@ export const listOneg = () => async (dispatch) => {
     }
 };
 
-export const detailsOneg = (_id) => async (dispatch) => {
-    dispatch({ type:ONEG_DETAILS_REQUEST, payload:_id });
+export const detailsOneg = (id) => async (dispatch) => {
+    dispatch({ type:ONEG_DETAILS_REQUEST, payload:id });
     try {
-      const {data}  = await Axios.get(`/api/oneg/${_id}`);
+      const {data}  = await Axios.get(`/api/oneg/${id}`);
       dispatch({ type:ONEG_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

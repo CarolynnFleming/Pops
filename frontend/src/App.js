@@ -1,5 +1,6 @@
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import HomeScreen from './screens/HomeScreen';
 import OfferingScreen from './screens/OfferingScreen';
 import BagScreen from './screens/BagScreen';
@@ -21,24 +22,30 @@ import OnegDetail from './detail/OnegDetail';
 import SportstinDetail from './detail/SportstinDetail';
 import TwogDetail from './detail/TwogDetail';
 import ThreegDetail from './detail/ThreegDetail';
+import CartScreen from './screens/CartScreen';
 function App() {
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
   return (
     <BrowserRouter>
     <div className="grid-container">
     <header className="row">
-        <div><a href="/">
-            <img className="popcorn"src={popcorn} alt="popcorn"/></a>
-            <a href="/" className="brand">WHATS POPPIN</a>
+        <div><Link to="/">
+            <img className="popcorn"src={popcorn} alt="popcorn"/></Link>
+            <Link to="/" className="brand">WHATS POPPIN</Link>
         </div>
     
             
                   
                   <div className="follow">
                   
-                  <a className="rainbow-4" href="/offeringscreen">Offerings</a>
+                  <Link className="rainbow-4" to="/offeringscreen">Offerings</Link>
                   
-                    <a className="rainbow-4" href="/cart">Cart</a>
-            <a className="rainbow-4" href="/signIn">Sign In</a>
+                    <Link className="rainbow-4" to="/cart">Cart
+                    {cartItems.length > 0 && (
+                      <span className='badge'>{cartItems.length}</span>
+                    )}</Link>
+            <Link className="rainbow-4" to="/signIn">Sign In</Link>
             
               </div>
         
@@ -60,7 +67,7 @@ function App() {
       <Route path="/Gng" element={<GrabnGoScreen/>}></Route>
       <Route path="/contactscreen" element={<ContactScreen/>}></Route>
       <Route path="/offeringscreen" element={<OfferingScreen/>}></Route>
-    
+      <Route path='/cart/:id?' element={<CartScreen/>}/>
       <Route path="/Bags/:id" element={<BagDetail/>}></Route>
       <Route path="/Gng/:id" element={<GngDetail/>}></Route>
       <Route path="/Bags" element={<BagScreen/>}></Route>
@@ -74,9 +81,9 @@ function App() {
       
     </main>
     <footer className="bottom">
-    <a className="rainbow-4" href="/contactscreen">Contact</a>
+    <Link className="rainbow-4" to="/contactscreen">Contact</Link>
         All rights reserved
-        <a className="rainbow-4" href="/about">About</a>
+        <Link className="rainbow-4" to="/about">About</Link>
     </footer>
 </div>
 </BrowserRouter>

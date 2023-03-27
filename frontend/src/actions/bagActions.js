@@ -14,10 +14,12 @@ export const listBag = () => async (dispatch) => {
     }
 };
 
-export const detailsBag = (_id) => async (dispatch) => {
-    dispatch({ type:BAG_DETAILS_REQUEST, payload:_id });
+export const detailsBag = (id) => async (dispatch) => {
+    dispatch({ type:BAG_DETAILS_REQUEST, payload: id });
     try {
-      const {data}  = await Axios.get(`/api/bags/${_id}`);
+     
+      const {data}  = await Axios.get(`/api/bags/${id}`);
+      
       dispatch({ type:BAG_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

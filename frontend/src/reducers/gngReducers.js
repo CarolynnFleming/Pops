@@ -15,10 +15,8 @@ switch (action.type) {
 };
 
 export const gngDetailsReducer = (
-    state = { gng: {}, loading: true },
-    action
-  ) => {
-    console.log(action, 'type');
+    state = {loading: true }, action ) => {
+    
     switch (action.type) {
       case GNG_DETAILS_REQUEST:
         return { loading: true };
