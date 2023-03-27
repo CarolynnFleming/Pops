@@ -34,6 +34,15 @@ header{
  /* box-shadow: 10px 10px 60px #ff9914; */
 
 }
+.badge{
+  color:#ffffff;
+  background-color: red;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+  font-family: creepster;
+}
 main {
   grid-area: main;
   padding: 1rem
@@ -105,21 +114,24 @@ header a {
   align-items: flex-start;
 }
 .col-1{
-  flex: 11 25rem;
+  flex: 1 1 25rem;
   margin: 2rem;
 }
 .col-2{
-  flex:  50rem;
+  flex: 2 1 50rem;
+}
+.min-width {
+  min-width: 30rem;
 }
 .rainbow-4:hover{
   background-image:     linear-gradient(
      to right, 
-     #E7484F,
-     #F68B1D, 
-     #FCED00,
-     #009E4F,
-     #00AAC3,
-     #732982
+     #b7b3a1,
+     #d1ca98, 
+     #edbf85,
+     #f7f06d,
+     #ffb140,
+     #ddfc74
    );
  animation:slidebg 2s linear infinite;
  border-radius: 30px;
@@ -154,6 +166,10 @@ header a {
 }
 img{
   border-radius: 0.5rem;
+}
+img.small{
+  max-width: 7rem;
+  width: 100%;
 }
 img.medium {
   max-width:29rem;
@@ -276,6 +292,21 @@ img.medium {
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.del,select, textarea,input:hover{
+  padding: 0.6em 1em;
+  border: none;
+  font-family: creepster;
+  outline: none;
+  color: rgb(35, 244, 188);
   background: #111;
   cursor: pointer;
   position: relative;
